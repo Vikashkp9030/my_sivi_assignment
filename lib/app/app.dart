@@ -29,6 +29,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<UsersBloc>(
           create: (_) => sl<UsersBloc>()..add(LoadUsers()),
         ),
+        BlocProvider<ChatHistoryBloc>(
+          create: (_) => sl<ChatHistoryBloc>()..add(LoadChatHistory()),
+        ),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
