@@ -53,7 +53,15 @@ class UsersPage extends StatelessWidget {
                 context.read<UsersBloc>().add(AddUserEvent(name));
 
                 Navigator.of(dialogContext).pop();
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('User added: $name'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
               },
+
               child: const Text('Add'),
             ),
           ],
